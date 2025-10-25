@@ -5,6 +5,9 @@ const PORT = 3001;
 
 // Import router dari books.js
 const booksRouter = require('./books');
+// Import router presensi & report
+const presensiRouter = require('./Ruters/presensi');
+const reportRouter = require('./Ruters/report');
 
 // Middleware
 app.use(cors());
@@ -23,6 +26,9 @@ app.get('/', (req, res) => {
 
 // Gunakan router untuk endpoint /api/books
 app.use('/api/books', booksRouter);
+// Gunakan router untuk endpoint presensi dan report
+app.use('/api/presensi', presensiRouter);
+app.use('/api/report', reportRouter);
 
 // Error Handling (Tugas 3)
 // Middleware untuk menangani 404 Not Found
